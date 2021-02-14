@@ -8,32 +8,29 @@ import { archiveTask, pinTask } from '../lib/redux'
 export function PureTaskList({ loading, tasks, onPinTask, onArchiveTask }) {
   const events = { onPinTask, onArchiveTask };
 
-  const loadingRow = (
+  const LoadingRow = (
     <div className="loading-item">
       <span className="glow-checkbox" />
       <span className="glow-text">
-        <span>Loading</span>
-        <span>cool</span>
-        <span>state</span>
+        <span>Loading</span> <span>cool</span> <span>state</span>
       </span>
     </div>
   );
 
-
   if (loading) {
     return (
       <div className="list-items">
-        {loadingRow}
-        {loadingRow}
-        {loadingRow}
-        {loadingRow}
-        {loadingRow}
-        {loadingRow}
+        {LoadingRow}
+        {LoadingRow}
+        {LoadingRow}
+        {LoadingRow}
+        {LoadingRow}
+        {LoadingRow}
       </div>
     );
   }
 
-  if (tasks.length === 0) {
+  if (tasks.length < 1 ) {
     return (
       <div className="list-items">
         <div className="wrapper-message">

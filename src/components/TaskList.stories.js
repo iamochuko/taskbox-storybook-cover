@@ -10,9 +10,10 @@ export default {
 };
 
 const Template = (args) => <PureTaskList {...args} />;
+
 export const Default = Template.bind({});
+//Shapping the stories through args composition
 Default.args = {
-  //Shapping the stories through args composition
   tasks: [
     { ...TaskStories.Default.args.task, id: "1", title: "Task 1" },
     { ...TaskStories.Default.args.task, id: "2", title: "Task 2" },
